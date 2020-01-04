@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.eurekaprovider.mapper.RegisterMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.eurekaprovider.model.Register" >
+    <constructor >
+      <arg column="rid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="rcound" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="passwrord" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.zking.eurekaprovider.model.Register" >
+    insert into register (rid, rcound, passwrord
+      )
+    values (#{rid,jdbcType=INTEGER}, #{rcound,jdbcType=VARCHAR}, #{passwrord,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.eurekaprovider.model.Register" >
+    insert into register
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rid != null" >
+        rid,
+      </if>
+      <if test="rcound != null" >
+        rcound,
+      </if>
+      <if test="passwrord != null" >
+        passwrord,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rid != null" >
+        #{rid,jdbcType=INTEGER},
+      </if>
+      <if test="rcound != null" >
+        #{rcound,jdbcType=VARCHAR},
+      </if>
+      <if test="passwrord != null" >
+        #{passwrord,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

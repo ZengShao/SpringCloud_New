@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.eurekaprovider.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.eurekaprovider.model.User" >
+    <constructor >
+      <arg column="uid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="uname" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="usex" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="uage" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="tel" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="card" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="createdata" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="state" jdbcType="INTEGER" javaType="java.lang.Integer" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.zking.eurekaprovider.model.User" >
+    insert into tuser (uid, uname, usex, 
+      uage, tel, card, createdata, 
+      state)
+    values (#{uid,jdbcType=INTEGER}, #{uname,jdbcType=VARCHAR}, #{usex,jdbcType=CHAR}, 
+      #{uage,jdbcType=INTEGER}, #{tel,jdbcType=VARCHAR}, #{card,jdbcType=VARCHAR}, #{createdata,jdbcType=TIMESTAMP}, 
+      #{state,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.eurekaprovider.model.User" >
+    insert into tuser
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="uid != null" >
+        uid,
+      </if>
+      <if test="uname != null" >
+        uname,
+      </if>
+      <if test="usex != null" >
+        usex,
+      </if>
+      <if test="uage != null" >
+        uage,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="card != null" >
+        card,
+      </if>
+      <if test="createdata != null" >
+        createdata,
+      </if>
+      <if test="state != null" >
+        state,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="uid != null" >
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="uname != null" >
+        #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="usex != null" >
+        #{usex,jdbcType=CHAR},
+      </if>
+      <if test="uage != null" >
+        #{uage,jdbcType=INTEGER},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="card != null" >
+        #{card,jdbcType=VARCHAR},
+      </if>
+      <if test="createdata != null" >
+        #{createdata,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

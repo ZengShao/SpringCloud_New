@@ -1,0 +1,28 @@
+# 端口号
+server:
+  port: 7501
+# 服务名称
+spring:
+  application:
+    name: config-server
+  profiles:
+    ## 配置本地配置文件必须激活内置的native,如若还需激活其他的就配置多个，如：native,dev/qas/prd
+    active: native
+#    active: native,prd
+  cloud:
+    config:
+      server:
+        native:
+          # 配置文件存放路径，多个路径之间可以用逗号分隔
+#          search-locations: classpath:/cnf
+          search-locations: classpath:/cnf,classpath:/cnf/datasource,classpath:/cnf/redis
+
+
+# 向注册中心注册
+# 服务注册与发现相关配置
+eureka:
+  client:
+    # 注册中心地址
+    serviceUrl:
+      defaultZone: http://peer1:7101/eureka/,http://peer2:7102/eureka/,http://peer3:7103/eureka/
+

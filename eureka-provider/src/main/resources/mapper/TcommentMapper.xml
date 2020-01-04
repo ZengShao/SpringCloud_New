@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zking.eurekaprovider.mapper.TcommentMapper" >
+  <resultMap id="BaseResultMap" type="com.zking.eurekaprovider.model.Tcomment" >
+    <constructor >
+      <arg column="cid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="csid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="cuid" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="content" jdbcType="VARCHAR" javaType="java.lang.String" />
+    </constructor>
+  </resultMap>
+  <insert id="insert" parameterType="com.zking.eurekaprovider.model.Tcomment" >
+    insert into tcomment (cid, csid, cuid, 
+      content)
+    values (#{cid,jdbcType=INTEGER}, #{csid,jdbcType=INTEGER}, #{cuid,jdbcType=INTEGER}, 
+      #{content,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zking.eurekaprovider.model.Tcomment" >
+    insert into tcomment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        cid,
+      </if>
+      <if test="csid != null" >
+        csid,
+      </if>
+      <if test="cuid != null" >
+        cuid,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="cid != null" >
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="csid != null" >
+        #{csid,jdbcType=INTEGER},
+      </if>
+      <if test="cuid != null" >
+        #{cuid,jdbcType=INTEGER},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

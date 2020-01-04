@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/configserver/config-server.iml" filepath="$PROJECT_DIR$/configserver/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/configserver/configserver.iml" filepath="$PROJECT_DIR$/configserver/configserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-consumer01/eureka-consumer01.iml" filepath="$PROJECT_DIR$/eureka-consumer01/eureka-consumer01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-consumer02/eureka-consumer02.iml" filepath="$PROJECT_DIR$/eureka-consumer02/eureka-consumer02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-provider/eureka-provider.iml" filepath="$PROJECT_DIR$/eureka-provider/eureka-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro/shiro.iml" filepath="$PROJECT_DIR$/shiro/shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springcloud01.iml" filepath="$PROJECT_DIR$/springcloud01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vo/vo.iml" filepath="$PROJECT_DIR$/vo/vo.iml" />
+    </modules>
+  </component>
+</project>

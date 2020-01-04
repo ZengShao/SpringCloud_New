@@ -1,0 +1,10 @@
+
+server:
+  port: 7301
+spring:
+  application:
+    name: eureka-consumer01
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7101/eureka/
